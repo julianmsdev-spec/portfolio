@@ -75,3 +75,91 @@ h6 {
   background: var(--color-primary);
   border-radius: 4px;
 }
+
+/* Timeline Responsive Styles */
+.timeline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-row.even {
+  flex-direction: row;
+}
+
+.timeline-row.odd {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  position: relative;
+  z-index: 10;
+}
+
+.timeline-icon {
+  width: 45%;
+  height: 300px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Center Line Container */
+.timeline-line-container {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(152, 255, 152, 0.2);
+  transform: translateX(-50%);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* Center vertically relative to the row? Or top? Code had top 0. Let's stick to top 0 or centered? */
+  background: var(--color-bg);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+@media (max-width: 768px) {
+
+  .timeline-row,
+  .timeline-row.even,
+  .timeline-row.odd {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-content {
+    width: 100%;
+    text-align: center !important;
+    padding: 0 !important;
+    margin-top: 1rem;
+  }
+
+  .timeline-icon {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-line-container {
+    display: none;
+  }
+
+  .timeline-dot {
+    display: none;
+  }
+}

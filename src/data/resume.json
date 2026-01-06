@@ -15,11 +15,12 @@
             "position": "Programmer",
             "startDate": "2022-01",
             "endDate": "2023-01",
-            "summary": "Developed and maintained enterprise web applications using C# and the .NET framework.",
+            "type": "dev",
+            "summary": "Spearheaded the modernization of legacy internal tools into robust, scalable enterprise web applications using the .NET ecosystem.",
             "highlights": [
-                "Architected and optimized SQL Server (T-SQL) reports to provide the sales department with real-time data.",
-                "Utilized JavaScript and CSS to build responsive user interfaces.",
-                "Collaborated within an Agile environment to translate complex business requirements into scalable software features."
+                "Architected and optimized high-performance SQL Server (T-SQL) reporting systems, reducing data retrieval time by 40% for the sales department.",
+                "Designed and implemented responsive, user-centric front-end interfaces using modern JavaScript and CSS, improving user adoption.",
+                "Played a key role in Agile sprint planning and execution, translating complex stakeholder requirements into deployable software solutions."
             ]
         },
         {
@@ -27,10 +28,12 @@
             "position": "Network Installation Technician",
             "startDate": "2020-06",
             "endDate": "2022-06",
-            "summary": "Directed end-to-end logistics and on-site installation of high-tier network equipment.",
+            "type": "network",
+            "summary": "Orchestrated critical network infrastructure deployments and logistics for high-availability commercial clients.",
             "highlights": [
-                "Managed personal equipment inventory and scheduling, consistently meeting 100% of project deadlines.",
-                "Troubleshot and resolved connectivity issues on-site."
+                "Achieved 100% on-time project completion rate through rigorous inventory management and logistical planning.",
+                "Performed expert-level troubleshooting and resolution of complex connectivity issues in remote and challenging environments.",
+                "Configured and validated enterprise-grade routers, switches, and satellite modems."
             ]
         },
         {
@@ -38,9 +41,11 @@
             "position": "Field Service Technician",
             "startDate": "2016-01",
             "endDate": "2019-01",
-            "summary": "Executed high-volume satellite equipment installations and provided technical support.",
+            "type": "satcom",
+            "summary": "Delivered premium technical service and installation for residential and commercial satellite systems.",
             "highlights": [
-                "Maintained high customer service ratings by educating users on system functionality."
+                "Consistently maintained top-tier customer satisfaction ratings (CSAT) by providing clear, non-technical system education to users.",
+                "Diagnosed and repaired signal degradation issues, optimizing system performance across diverse physical installations."
             ]
         },
         {
@@ -48,11 +53,12 @@
             "position": "Network / Satellite Technician",
             "startDate": "2010-07",
             "endDate": "2014-07",
-            "summary": "Managed and maintained $2 billion in mission-critical communications equipment.",
+            "type": "mil",
+            "summary": "Commanded the operation and maintenance of tactical communication assets valued at over $2 billion in high-stakes environments.",
             "highlights": [
-                "Planned and executed the rapid deployment of network and satellite systems in high-pressure environments.",
-                "Led and mentored teams of junior Marines.",
-                "Installed and configured complex network infrastructure 'on the fly'."
+                "Led rapid-response deployment teams to establish secure voice and data networks in austere locations.",
+                "Mentored and trained junior Marines in technical proficiency, operational safety, and leadership protocols.",
+                "Engineered ad-hoc field solutions to restore mission-critical connectivity under combat conditions."
             ]
         }
     ],

@@ -1,7 +1,52 @@
 import ThreeScene from './components/ThreeScene';
+import Experience3D from './components/Experience3D';
+import Skills3D from './components/Skills3D';
 import Section from './components/Section';
 import resumeData from './data/resume.json';
 import { motion, type Variants } from 'framer-motion';
+import { useState } from 'react';
+
+const SkillCard = ({ skillGroup, variants }: { skillGroup: any, variants: Variants }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <motion.div
+      variants={variants}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      whileHover={{ y: -5, backgroundColor: 'rgba(152, 255, 152, 0.08)' }}
+      style={{
+        background: 'rgba(5, 10, 5, 0.6)',
+        padding: '2rem',
+        borderRadius: '16px',
+        border: '1px solid rgba(152, 255, 152, 0.1)',
+        backdropFilter: 'blur(5px)',
+        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center'
+      }}
+    >
+      <Skills3D category={skillGroup.name} hovered={hovered} />
+      <h3 style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', letterSpacing: '1px' }}>{skillGroup.name.toUpperCase()}</h3>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.8rem' }}>
+        {skillGroup.keywords.map((tech: string, i: number) => (
+          <span key={i} style={{
+            fontSize: '0.9rem',
+            fontFamily: 'var(--font-mono)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            padding: '0.4rem 0.8rem',
+            borderRadius: '4px',
+            color: '#e0f2e0',
+            background: 'rgba(255,255,255,0.02)'
+          }}>
+            {tech}
+          </span>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
 
 function App() {
   const { basics, work, education, skills } = resumeData;
@@ -69,57 +114,39 @@ function App() {
         <Section id="experience" title="Experience">
           <div style={{ position: 'relative', padding: '2rem 0' }}>
             {/* Central Line */}
-            <div style={{
-              position: 'absolute',
-              left: '50%',
-              top: 0,
-              bottom: 0,
-              width: '2px',
-              background: 'rgba(152, 255, 152, 0.2)',
-              transform: 'translateX(-50%)'
-            }} />
+            <div className="timeline-line-container" />
 
             {work.map((job, index) => {
               const isEven = index % 2 === 0;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className={`timeline-row ${isEven ? 'even' : 'odd'}`}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ margin: "-100px" }}
                   transition={{ duration: 0.6 }}
-                  style={{
-                    display: 'flex',
-                    justifyContent: isEven ? 'flex-end' : 'flex-start',
-                    marginBottom: '4rem',
-                    position: 'relative'
-                  }}
                 >
+                  <div className="timeline-icon">
+                    <Experience3D type={job.type || 'dev'} />
+                  </div>
+
                   {/* Timeline Dot (Centered) */}
-                  <div style={{
-                    position: 'absolute',
-                    left: '50%',
-                    top: '0',
-                    width: '16px',
-                    height: '16px',
-                    background: 'var(--color-bg)',
-                    border: '2px solid var(--color-primary)',
-                    borderRadius: '50%',
-                    transform: 'translate(-50%, 0)',
-                    zIndex: 2,
-                    boxShadow: '0 0 10px var(--color-primary)'
-                  }} />
+                  <div className="timeline-dot" />
 
                   {/* Content Card */}
-                  <div style={{
-                    width: '45%',
-                    textAlign: isEven ? 'right' : 'left',
-                    padding: isEven ? '0 2rem 0 0' : '0 0 0 2rem'
-                  }}>
+                  <div className="timeline-content" style={{ textAlign: isEven ? 'left' : 'right' }}>
                     <h3 style={{ fontSize: '1.8rem', marginBottom: '0.2rem', color: '#fff' }}>{job.position}</h3>
                     <h4 style={{ fontSize: '1.1rem', color: 'var(--color-secondary)', marginBottom: '0.5rem', fontFamily: 'var(--font-mono)' }}>{job.name}</h4>
                     <p style={{ color: '#888', marginBottom: '1rem', fontSize: '0.9rem' }}>{job.startDate} — {job.endDate}</p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#ddd' }}>{job.summary}</p>
+                    {job.highlights && (
+                      <ul style={{ marginTop: '1rem', paddingLeft: '1.5rem', listStyle: 'disc', color: '#ccc' }}>
+                        {job.highlights.map((highlight, i) => (
+                          <li key={i} style={{ marginBottom: '0.5rem' }}>{highlight}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </motion.div>
               );
@@ -137,36 +164,7 @@ function App() {
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}
           >
             {skills.map((skillGroup, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                whileHover={{ y: -5, backgroundColor: 'rgba(152, 255, 152, 0.08)' }}
-                style={{
-                  background: 'rgba(5, 10, 5, 0.6)',
-                  padding: '2rem',
-                  borderRadius: '16px',
-                  border: '1px solid rgba(152, 255, 152, 0.1)',
-                  backdropFilter: 'blur(5px)',
-                  textAlign: 'center'
-                }}
-              >
-                <h3 style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', letterSpacing: '1px' }}>{skillGroup.name.toUpperCase()}</h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.8rem' }}>
-                  {skillGroup.keywords.map((tech, i) => (
-                    <span key={i} style={{
-                      fontSize: '0.9rem',
-                      fontFamily: 'var(--font-mono)',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
-                      padding: '0.4rem 0.8rem',
-                      borderRadius: '4px',
-                      color: '#e0f2e0',
-                      background: 'rgba(255,255,255,0.02)'
-                    }}>
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
+              <SkillCard key={index} skillGroup={skillGroup} variants={fadeInUp} />
             ))}
           </motion.div>
         </Section>
