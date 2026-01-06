@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive portfolio website built with React, Vite, and Three.js. This project showcases my experience and skills through a visually engaging, responsive interface featuring 3D elements and animations.
 
-Currently, two official plugins are available:
+**[Live Demo](https://julianmsdev-spec.github.io/portfolio/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **3D Interactive Experience Timeline**: A custom timeline featuring 3D abstract representations for each career stage (Developer, Network, Satellite, Military) built with React Three Fiber.
+- **Dynamic Skills Cloud**: Skill badges float in a "living cloud" animation and pop with a glow effect on hover.
+- **3D Skill Categories**: Each skill category card (Software, Networking, Leadership) is topped with a unique, spinning 3D icon.
+- **Responsive Design**: Fully responsive layout that adapts from a zig-zag timeline on desktop to a clean stacked view on mobile.
+- **Performance Optimized**: Built with Vite for lightning-fast development and optimized production builds.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Core**: [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Runtime**: [Bun](https://bun.sh/)
+- **3D Graphics**: [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/), [Drei](https://github.com/pmndrs/drei), [Three.js](https://threejs.org/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Styling**: CSS Modules / Vanilla CSS with Variables
+- **Deployment**: [GitHub Pages](https://pages.github.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [Node.js](https://nodejs.org/) or [Bun](https://bun.sh/) installed.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/julianmsdev-spec/portfolio.git
+    cd portfolio
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2.  **Install dependencies:**
+    ```bash
+    bun install
+    # or
+    npm install
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Run the development server:**
+    ```bash
+    bun run dev
+    # or
+    npm run dev
+    ```
+
+## 📦 Deployment
+
+This project is configured to deploy to GitHub Pages.
+
+1.  **Build and Deploy:**
+    ```bash
+    bun run deploy
+    # This runs `bun run build` followed by `gh-pages -d dist`
+    ```
+
+2.  **Manual Build:**
+    To build the project without deploying:
+    ```bash
+    bun run build
+    ```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
