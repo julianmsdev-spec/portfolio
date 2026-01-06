@@ -30,19 +30,47 @@ const SkillCard = ({ skillGroup, variants }: { skillGroup: any, variants: Varian
       <Skills3D category={skillGroup.name} hovered={hovered} />
       <h3 style={{ color: 'var(--color-primary)', marginBottom: '1.5rem', letterSpacing: '1px' }}>{skillGroup.name.toUpperCase()}</h3>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.8rem' }}>
-        {skillGroup.keywords.map((tech: string, i: number) => (
-          <span key={i} style={{
-            fontSize: '0.9rem',
-            fontFamily: 'var(--font-mono)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            padding: '0.4rem 0.8rem',
-            borderRadius: '4px',
-            color: '#e0f2e0',
-            background: 'rgba(255,255,255,0.02)'
-          }}>
-            {tech}
-          </span>
-        ))}
+        {skillGroup.keywords.map((tech: string, i: number) => {
+          // Generate random floating parameters for each badge
+          const randomDuration = 2 + Math.random() * 4; // Between 2 and 6 seconds
+          const randomY = 5 + Math.random() * 10; // Move up/down by 5-15px
+          const randomX = -5 + Math.random() * 10; // Move left/right by -5 to 5px
+
+          return (
+            <motion.span
+              key={i}
+              animate={{
+                y: [0, -randomY, 0],
+                x: [0, randomX, 0],
+              }}
+              transition={{
+                duration: randomDuration,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+              whileHover={{
+                scale: 1.1,
+                backgroundColor: 'rgba(152, 255, 152, 0.2)',
+                borderColor: 'var(--color-primary)',
+                boxShadow: '0 0 8px rgba(152, 255, 152, 0.4)'
+              }}
+              style={{
+                fontSize: '0.9rem',
+                fontFamily: 'var(--font-mono)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '0.4rem 0.8rem',
+                borderRadius: '4px',
+                color: '#e0f2e0',
+                background: 'rgba(255,255,255,0.02)',
+                cursor: 'pointer',
+                display: 'inline-block'
+              }}
+            >
+              {tech}
+            </motion.span>
+          );
+        })}
       </div>
     </motion.div>
   );
