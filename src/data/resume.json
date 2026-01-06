@@ -1,0 +1,105 @@
+{
+    "basics": {
+        "name": "Julian Smith",
+        "label": "Full-Stack Developer",
+        "email": "JULIAN.MS.DEV@GMAIL.COM",
+        "location": {
+            "city": "Indiana",
+            "countryCode": "US"
+        },
+        "summary": "Multifaceted Full-Stack Developer & Technical Lead with 11+ years of experience across software engineering, network infrastructure, and mission-critical satellite communications. Expert in .NET, SQL Server, and modern JavaScript frameworks (React, Next.js). A Marine Corps veteran with a proven track record of managing $2B in assets and leading complex technical operations."
+    },
+    "work": [
+        {
+            "name": "Steel Dynamics",
+            "position": "Programmer",
+            "startDate": "2022-01",
+            "endDate": "2023-01",
+            "summary": "Developed and maintained enterprise web applications using C# and the .NET framework.",
+            "highlights": [
+                "Architected and optimized SQL Server (T-SQL) reports to provide the sales department with real-time data.",
+                "Utilized JavaScript and CSS to build responsive user interfaces.",
+                "Collaborated within an Agile environment to translate complex business requirements into scalable software features."
+            ]
+        },
+        {
+            "name": "Expedition Communications",
+            "position": "Network Installation Technician",
+            "startDate": "2020-06",
+            "endDate": "2022-06",
+            "summary": "Directed end-to-end logistics and on-site installation of high-tier network equipment.",
+            "highlights": [
+                "Managed personal equipment inventory and scheduling, consistently meeting 100% of project deadlines.",
+                "Troubleshot and resolved connectivity issues on-site."
+            ]
+        },
+        {
+            "name": "DIRECTV",
+            "position": "Field Service Technician",
+            "startDate": "2016-01",
+            "endDate": "2019-01",
+            "summary": "Executed high-volume satellite equipment installations and provided technical support.",
+            "highlights": [
+                "Maintained high customer service ratings by educating users on system functionality."
+            ]
+        },
+        {
+            "name": "United States Marine Corps",
+            "position": "Network / Satellite Technician",
+            "startDate": "2010-07",
+            "endDate": "2014-07",
+            "summary": "Managed and maintained $2 billion in mission-critical communications equipment.",
+            "highlights": [
+                "Planned and executed the rapid deployment of network and satellite systems in high-pressure environments.",
+                "Led and mentored teams of junior Marines.",
+                "Installed and configured complex network infrastructure 'on the fly'."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Mira Costa College",
+            "area": "Computer Science, Systems Networking, and Programming",
+            "studyType": "Technical Certification",
+            "courses": [
+                ".NET",
+                "React",
+                "SQL Server"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "Software Development",
+            "keywords": [
+                ".NET Framework",
+                "C#",
+                "ASP.NET MVC",
+                "Web API",
+                "SQL Server (T-SQL)",
+                "React",
+                "Next.js",
+                "JavaScript (ES6+)",
+                "CSS3",
+                "HTML5"
+            ]
+        },
+        {
+            "name": "Networking & Infrastructure",
+            "keywords": [
+                "Cisco IOS",
+                "Juniper Networks",
+                "SATCOM",
+                "Network Topology Design"
+            ]
+        },
+        {
+            "name": "Leadership & Operations",
+            "keywords": [
+                "Agile/Scrum",
+                "Team Leadership",
+                "Logistics Management"
+            ]
+        }
+    ]
+}
