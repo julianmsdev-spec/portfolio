@@ -64,13 +64,22 @@
     ],
     "education": [
         {
-            "institution": "Mira Costa College",
-            "area": "Computer Science, Systems Networking, and Programming",
-            "studyType": "Technical Certification",
+            "institution": "San Diego Global Knowledge University",
+            "area": "Full Stack Development",
+            "studyType": "Certificate",
             "courses": [
-                ".NET",
+                "Algorithms",
                 "React",
-                "SQL Server"
+                "Python"
+            ]
+        },
+        {
+            "institution": "Mira Costa College",
+            "area": "Computer Science",
+            "studyType": "Three Years No Degree",
+            "courses": [
+                "Computer Science",
+                "Graphic Design"
             ]
         }
     ],
@@ -82,18 +91,19 @@
                 "C#",
                 "ASP.NET MVC",
                 "Web API",
-                "SQL Server (T-SQL)",
+                "SQL Server",
                 "React",
                 "Next.js",
                 "JavaScript (ES6+)",
                 "CSS3",
-                "HTML5"
+                "HTML5",
+                "Rust"
             ]
         },
         {
             "name": "Networking & Infrastructure",
             "keywords": [
-                "Cisco IOS",
+                "Cisco",
                 "Juniper Networks",
                 "SATCOM",
                 "Network Topology Design"
